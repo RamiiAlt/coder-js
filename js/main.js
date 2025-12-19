@@ -18,7 +18,7 @@ function pedirNota(mensaje) {
 
 // mostrar resultados
 function mostrarResultados(alumnos, notas) {
-  console.log("📘 RESULTADOS FINALES");
+  console.log("RESULTADOS FINALES");
 
   for (let i = 0; i < alumnos.length; i++) {
     console.log(alumnos[i] + " - Nota: " + notas[i]);
