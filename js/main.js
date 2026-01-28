@@ -1,14 +1,27 @@
-const inputProducto = document.getElementById("producto");
-const botonAgregar = document.getElementById("agregar");
-const lista = document.getElementById("lista");
+// CONST Y VARIABLES
+const CANTIDAD_ALUMNOS = 3;
+let alumnos = [];
+let notas = [];
+let contador = 0;
 
-let productos = JSON.parse(localStorage.getItem("productos")) || [];
+// pedir nombre del alumno
+function pedirAlumno(mensaje) {
+  let nombre = prompt(mensaje);
+  return nombre;
+}
 
-// Mostrar productos al cargar
-mostrarProductos();
+//  pedir nota
+function pedirNota(mensaje) {
+  let nota = Number(prompt(mensaje));
+  return nota;
+}
 
-botonAgregar.addEventListener("click", () => {
-    const nombre = inputProducto.value;
+// mostrar resultados
+function mostrarResultados(alumnos, notas) {
+  console.log("📘 RESULTADOS FINALES");
+
+  for (let i = 0; i < alumnos.length; i++) {
+    console.log(alumnos[i] + " - Nota: " + notas[i]);
 
     if (nombre !== "") {
         productos.push(nombre);
