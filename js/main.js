@@ -6,21 +6,21 @@ let contador = 0;
 
 // pedir nombre del alumno
 function pedirAlumno(mensaje) {
-  let nombre = prompt(mensaje);
-  return nombre;
+    let nombre = prompt(mensaje);
+return nombre;
 }
 
 //  pedir nota
 function pedirNota(mensaje) {
-  let nota = Number(prompt(mensaje));
-  return nota;
+    let nota = Number(prompt(mensaje));
+    return nota;
 }
 
 // mostrar resultados
 function mostrarResultados(alumnos, notas) {
-  console.log("📘 RESULTADOS FINALES");
+    console.log("📘 RESULTADOS FINALES");
 
-  for (let i = 0; i < alumnos.length; i++) {
+    for (let i = 0; i < alumnos.length; i++) {
     console.log(alumnos[i] + " - Nota: " + notas[i]);
 
     if (nombre !== "") {
@@ -29,7 +29,7 @@ function mostrarResultados(alumnos, notas) {
         inputProducto.value = "";
         mostrarProductos();
     }
-});
+}
 
 function mostrarProductos() {
     lista.innerHTML = "";
@@ -39,4 +39,5 @@ function mostrarProductos() {
         li.textContent = producto;
         lista.appendChild(li);
     }
+}
 }
