@@ -1,52 +1,29 @@
-// CONST Y VARIABLES
-const CANTIDAD_ALUMNOS = 3;
-let alumnos = [];
-let notas = [];
-let contador = 0;
+const inputProducto = document.getElementById("producto");
+const botonAgregar = document.getElementById("agregar");
+const lista = document.getElementById("lista");
 
-// pedir nombre del alumno
-function pedirAlumno(mensaje) {
-  let nombre = prompt(mensaje);
-  return nombre;
-}
+let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
-//  pedir nota
-function pedirNota(mensaje) {
-  let nota = Number(prompt(mensaje));
-  return nota;
-}
+// Mostrar productos al cargar
+mostrarProductos();
 
-// mostrar resultados
-function mostrarResultados(alumnos, notas) {
-  console.log("📘 RESULTADOS FINALES");
+botonAgregar.addEventListener("click", () => {
+    const nombre = inputProducto.value;
 
-  for (let i = 0; i < alumnos.length; i++) {
-    console.log(alumnos[i] + " - Nota: " + notas[i]);
-
-    if (notas[i] >= 6) {
-      console.log("Estado: APROBADO");
-    } else {
-      console.log("Estado: DESAPROBADO");
+    if (nombre !== "") {
+        productos.push(nombre);
+        localStorage.setItem("productos", JSON.stringify(productos));
+        inputProducto.value = "";
+        mostrarProductos();
     }
-  }
+});
+
+function mostrarProductos() {
+    lista.innerHTML = "";
+
+    for (let producto of productos) {
+        const li = document.createElement("li");
+        li.textContent = producto;
+        lista.appendChild(li);
+    }
 }
-
-
-alert("Bienvenido al sistema de notas");
-
-while (contador < CANTIDAD_ALUMNOS) {
-  let alumno = pedirAlumno("Ingresá el nombre del alumno");
-  let nota = pedirNota("Ingresá la nota del alumno");
-
-  if (alumno === "" || isNaN(nota)) {
-    alert("Datos inválidos. Intente nuevamente.");
-  } else {
-    alumnos.push(alumno);
-    notas.push(nota);
-    contador++;
-    alert("Alumno cargado correctamente");
-  }
-}
-
-mostrarResultados(alumnos, notas);
-alert("Revisá la consola para ver los resultados");
