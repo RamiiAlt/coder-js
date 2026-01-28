@@ -1,3 +1,5 @@
+console.log("JS cargado correctamente");
+
 // VARIABLES DOM
 const inputProducto = document.getElementById("inputProducto");
 const btnAgregar = document.getElementById("btnAgregar");
