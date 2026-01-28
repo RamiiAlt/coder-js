@@ -1,36 +1,12 @@
-// CONST Y VARIABLES
-const CANTIDAD_ALUMNOS = 3;
-let alumnos = [];
-let notas = [];
-let contador = 0;
+// VARIABLES DOM
+const inputProducto = document.getElementById("inputProducto");
+const btnAgregar = document.getElementById("btnAgregar");
+const lista = document.getElementById("listaProductos");
 
-// pedir nombre del alumno
-function pedirAlumno(mensaje) {
-    let nombre = prompt(mensaje);
-return nombre;
-}
+// ARRAY DE PRODUCTOS (localStorage)
+let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
-//  pedir nota
-function pedirNota(mensaje) {
-    let nota = Number(prompt(mensaje));
-    return nota;
-}
-
-// mostrar resultados
-function mostrarResultados(alumnos, notas) {
-    console.log(" Resultados Finales: ");
-
-    for (let i = 0; i < alumnos.length; i++) {
-    console.log(alumnos[i] + " - Nota: " + notas[i]);
-
-    if (nombre !== "") {
-        productos.push(nombre);
-        localStorage.setItem("productos", JSON.stringify(productos));
-        inputProducto.value = "";
-        mostrarProductos();
-    }
-}
-
+// MOSTRAR PRODUCTOS
 function mostrarProductos() {
     lista.innerHTML = "";
 
@@ -40,4 +16,20 @@ function mostrarProductos() {
         lista.appendChild(li);
     }
 }
-}
+
+// EVENTO BOTÓN
+btnAgregar.addEventListener("click", () => {
+    const nombre = inputProducto.value.trim();
+
+    if (nombre !== "") {
+        productos.push(nombre);
+        localStorage.setItem("productos", JSON.stringify(productos));
+        inputProducto.value = "";
+        mostrarProductos();
+    } else {
+        alert("Ingrese un producto válido");
+    }
+});
+
+// CARGAR PRODUCTOS AL INICIAR
+mostrarProductos();
