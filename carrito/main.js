@@ -74,7 +74,16 @@ btnAgregar.addEventListener("click", () => {
     const nombre = inputProducto.value.trim();
 
     if (nombre !== "") {
-        agregarProducto(nombre);
+        // Buscar el precio del producto en el HTML
+        const card = document.querySelector(`.card[data-producto="${nombre}"]`);
+        let precio = 0;
+        
+        if (card) {
+            const precioText = card.querySelector(".precio").textContent;
+            precio = parseFloat(precioText.replace("$", ""));
+        }
+        
+        agregarProducto(nombre, precio);
         inputProducto.value = "";
     } else {
         alert("Ingrese un producto válido");
