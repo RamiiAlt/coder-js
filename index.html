@@ -3,20 +3,220 @@
 
 <head>
     <meta charset="UTF-8">
-    <script src="./carrito/main.js" defer></script>
-    <title>Simulador Carrito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./carrito/main.js"></script>
+    <title>Fresh| Mercado Online</title>
     <link rel="stylesheet" href="./carrito/style.css">
 </head>
 
 <body>
 
-    <h1>Carrito de Compras</h1>
+    <header class="header">
+        <div class="header-content">
+            <h1>🥦 Mercado Fresh </h1>
+            <p>Tu mercado online de confianza - Calidad garantizada</p>
+        </div>
+        <nav class="nav">
+            <a href="#productos">Productos</a>
+            <a href="#carrito">Mi Carrito</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-    <input type="text" id="inputProducto" placeholder="Nombre del producto">
-    <button id="btnAgregar">Agregar</button>
+    <section class="hero">
+        <div class="hero-text">
+            <h2>¡Bienvenido a Fresh!</h2>
+            <p>Comprá fácil, rápido y seguro desde casa</p>
+            <p class="hero-subtext">Agregá productos a tu carrito y guardalos automáticamente</p>
+        </div>
+    </section>
 
-    <h2>Productos</h2>
-    <ul id="listaProductos"></ul>
+    <main class="container">
+
+        <section class="beneficios">
+            <h2>¿Por qué comprar con nosotros?</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio">
+                    <span class="icono">🚚</span>
+                    <h3>Envío Rápido</h3>
+                    <p>Entrega en 24-48 horas</p>
+                </div>
+                <div class="beneficio">
+                    <span class="icono">💳</span>
+                    <h3>Pago Seguro</h3>
+                    <p>Múltiples formas de pago</p>
+                </div>
+                <div class="beneficio">
+                    <span class="icono">✅</span>
+                    <h3>Garantía de Calidad</h3>
+                    <p>Productos frescos y de calidad</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="productos" id="productos">
+            <h2>🛍️ Nuestros Productos</h2>
+
+            <div class="categoria">
+                <h3>🥖 Panadería</h3>
+                <div class="cards">
+                    <div class="card" data-producto="Pan Integral">
+                        <img src="./assets/pan-de-salvado_shutterstock_49768897.webp" alt="Pan Integral"
+                            class="producto-imagen">
+                        <h3>Pan Integral</h3>
+                        <p>Pan fresco del día</p>
+                        <span class="precio">$4.50</span>
+                    </div>
+
+                    <div class="card" data-producto="Medialunas">
+                        <img src="./assets/medialunas.avif" alt="Medialunas" class="producto-imagen">
+                        <h3>Medialunas</h3>
+                        <p>Recién horneadas (6 unidades)</p>
+                        <span class="precio">$3.20</span>
+                    </div>
+
+                    <div class="card" data-producto="Torta">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Torta"
+                            class="producto-imagen">
+                        <h3>Torta </h3>
+                        <p>Torta de chocolate</p>
+                        <span class="precio">$5.80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h3>🥛 Lácteos</h3>
+                <div class="cards">
+                    <div class="card" data-producto="Leche Entera">
+                        <img src="./assets/leche.jpg" alt="Leche" class="producto-imagen">
+                        <h3>Leche Entera</h3>
+                        <p>Leche fresca 1L</p>
+                        <span class="precio">$2.10</span>
+                    </div>
+
+                    <div class="card" data-producto="Yogur Natural">
+                        <img src="./assets/yogur-ktEF--1248x698@abc.webp" alt="Yogur" class="producto-imagen">
+                        <h3>Yogur Natural</h3>
+                        <p>Yogur natural 500g</p>
+                        <span class="precio">$3.50</span>
+                    </div>
+
+                    <div class="card" data-producto="Queso Fresco">
+                        <img src="./assets/quesofresco-header_3.jpg" alt="Queso" class="producto-imagen">
+                        <h3>Queso Fresco</h3>
+                        <p>Queso fresco 300g</p>
+                        <span class="precio">$6.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h3>🥗 Verduras y Frutas</h3>
+                <div class="cards">
+                    <div class="card" data-producto="Tomates Frescos">
+                        <img src="./assets/tomates.jpg" alt="Tomates" class="producto-imagen">
+                        <h3>Tomates Frescos</h3>
+                        <p>Tomates naturales 1kg</p>
+                        <span class="precio">$2.80</span>
+                    </div>
+
+                    <div class="card" data-producto="Manzanas">
+                        <img src="./assets/destacada-manzanas.webp" alt="Manzanas" class="producto-imagen">
+                        <h3>Manzanas</h3>
+                        <p>Manzanas rojas 1kg</p>
+                        <span class="precio">$3.00</span>
+                    </div>
+
+                    <div class="card" data-producto="Ensalada">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Ensalada"
+                            class="producto-imagen">
+                        <h3>ensalada</h3>
+                        <p>Ensalada fresca</p>
+                        <span class="precio">$1.80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h3>🍚 Alimentos Básicos</h3>
+                <div class="cards">
+                    <div class="card" data-producto="Arroz">
+                        <img src="./assets/arroz_basmati.jpg" alt="Arroz" class="producto-imagen">
+                        <h3>Arroz</h3>
+                        <p>Arroz integral 1kg</p>
+                        <span class="precio">$2.50</span>
+                    </div>
+
+                    <div class="card" data-producto="Fideos">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9" alt="Fideos"
+                            class="producto-imagen">
+                        <h3>Fideos</h3>
+                        <p>Fideos de trigo 500g</p>
+                        <span class="precio">$1.20</span>
+                    </div>
+
+                    <div class="card" data-producto="Aceite de Oliva">
+                        <img src="./assets/usos-beneficios-del-aceite-de-oliva_1.jpg" alt="Aceite"
+                            class="producto-imagen">
+                        <h3>Aceite de Oliva</h3>
+                        <p>Aceite extra virgen 500ml</p>
+                        <span class="precio">$8.50</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="carrito" id="carrito">
+            <h2>🧾 Mi Carrito de Compras</h2>
+
+            <div class="agregar">
+                <input type="text" id="inputProducto" placeholder="Ej: Arroz, Fideos, Aceite...">
+                <button id="btnAgregar">Agregar al carrito</button>
+            </div>
+
+            <div class="carrito-info">
+                <p>Total de productos: <span id="totalProductos">0</span></p>
+            </div>
+
+            <ul id="listaProductos"></ul>
+
+            <div class="carrito-acciones">
+                <button id="btnVaciar" class="btn-vaciar">Vaciar Carrito</button>
+                <button id="btnComprar" class="btn-comprar">Finalizar Compra</button>
+            </div>
+        </section>
+
+        <section class="nosotros">
+            <h2>Sobre Fresh</h2>
+            <p>Somos un mini mercado online comprometido con ofrecerte productos frescos y de calidad.
+                Con más de 10 años de experiencia, nos dedicamos a hacer tus compras fáciles y seguras.</p>
+            <p>Nuestro equipo selecciona cuidadosamente cada producto para garantizar tu satisfacción.</p>
+        </section>
+
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📞 +54 11 2345-6789</p>
+                <p>📧 info@freshmart.com</p>
+                <p>📍 Av. Principal 123, Ciudad</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 8:00 - 20:00</p>
+                <p>Sábados: 8:00 - 18:00</p>
+                <p>Domingos: 9:00 - 17:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Seguinos</h3>
+                <p>Facebook | Instagram | Twitter</p>
+            </div>
+        </div>
+        <p class="copyright">© 2026 FreshMart - Todos los derechos reservados</p>
+    </footer>
 
 </body>
 
